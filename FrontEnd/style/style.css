@@ -1,0 +1,225 @@
+/* =============== reset =============== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption, footer,
+header, hgroup, menu, nav, output, ruby, section,
+summary, time, mark, audio, video { margin:0; padding:0; border:0; font:inherit; font-size:100%; vertical-align:baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
+body{ line-height:1; }
+ol, ul{ list-style:none; }
+blockquote, q{ quotes:none; }
+blockquote:before, blockquote:after, q:before, q:after{ content:''; }
+table{ border-collapse:collapse; border-spacing:0; }
+
+/* =============== base =============== */
+body{
+  max-width:1140px; margin:auto;
+  font-family:'Work Sans', sans-serif; font-size:14px;
+  background:#FFFEF8; color:#3D3D3D;
+}
+header{ display:flex; justify-content:space-between; margin:32px 0; }
+section{ margin:50px 0; }
+
+/* =============== branding =============== */
+h1{
+  display:flex; flex-direction:column;
+  font-family:'Syne', sans-serif; font-size:22px; font-weight:800; color:#B1663C;
+}
+h1>span{ font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:#3D3D3D; }
+h2{ font-family:'Syne', sans-serif; font-weight:700; font-size:30px; color:#1D6154; }
+
+/* =============== nav =============== */
+nav ul{ display:flex; align-items:center; gap:32px; }
+nav li{ padding:0; font-size:14px; text-transform:lowercase; }
+li:hover{ color:#B1663C; }
+
+/* =============== intro =============== */
+#introduction{ display:flex; align-items:center; gap:36px; }
+#introduction figure{ flex:1; }
+#introduction img{
+  display:block; width:100%; max-width:474px;
+  aspect-ratio:4/3; object-fit:cover; border:none; outline:none;
+}
+#introduction article{ flex:1; max-width:520px; }
+#introduction h2{ margin-bottom:12px; }
+#introduction p{ margin-bottom:8px; line-height:1.5; }
+
+/* =============== portfolio =============== */
+#portfolio h2{
+  display:flex; align-items:center; justify-content:center; gap:14px;
+  margin-bottom:18px;
+}
+
+/* =============== filtres (pills) =============== */
+.filter{
+  display:flex; justify-content:center; align-items:center;
+  gap:16px; margin:24px 0 26px;
+}
+.filter .category,
+.filter .category:link,
+.filter .category:visited,
+.filter .category:hover,
+.filter .category:active,
+.filter .category:focus{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:8px 22px;
+  border:1px solid #1D6154; border-radius:999px;
+  background:#FFFEF8; color:#1D6154;
+  font:600 14px "Work Sans", sans-serif;
+  line-height:1; text-decoration:none; outline:none;
+  transition:background .2s ease, color .2s ease, border-color .2s ease;
+}
+.filter .category:hover{ background:rgba(29,97,84,.06); }
+.filter .category.selected{ background:#1D6154; color:#fff; border-color:#1D6154; }
+.filter .category:focus-visible{ outline:2px solid #1D6154; outline-offset:2px; }
+
+/* =============== galerie =============== */
+.gallery{
+  width:980px; max-width:calc(100% - 80px);
+  margin:0 auto 64px;
+  display:grid; grid-template-columns:repeat(3,1fr);
+  grid-column-gap:18px; grid-row-gap:22px;
+}
+.gallery figure{ margin:0; position:relative; }
+.gallery img{ width:100%; height:420px; object-fit:cover; display:block; background:#fff; }
+.gallery figcaption{ margin-top:6px; font-size:10px; color:#6C6C6C; }
+
+/* =============== contact =============== */
+#contact{ width:540px; max-width:100%; margin:auto; }
+#contact>*{ text-align:center; }
+#contact h2{ margin-bottom:12px; }
+#contact form{ text-align:left; margin-top:30px; display:flex; flex-direction:column; }
+#contact input{
+  height:50px; font-size:16px; border:none; box-shadow:0 4px 14px rgba(0,0,0,.09); padding:0 12px;
+}
+#contact label{ margin:18px 0 10px; }
+#contact textarea{
+  border:none; box-shadow:0 4px 14px rgba(0,0,0,.09); min-height:120px; padding:12px; resize:vertical;
+}
+input[type="submit"]{
+  font-family:'Syne', sans-serif; font-weight:700; color:#fff; background:#1D6154;
+  margin:24px auto 0; width:180px; height:36px; text-align:center; border-radius:60px; border:none; cursor:pointer;
+}
+
+/* =============== footer =============== */
+footer nav ul{
+  display:flex;
+  justify-content:flex-end;
+  margin:32px 0;
+}
+
+/* =============== liens nav neutres =============== */
+header nav a,
+header nav a:link,
+header nav a:visited,
+header nav a:hover,
+header nav a:active,
+header nav a:focus{ text-decoration:none; color:inherit; }
+
+/* =============== focus clavier =============== */
+header nav a:focus-visible{ outline:2px solid #1D6154; outline-offset:2px; }
+
+/* =============== bandeau édition (fixe) =============== */
+#edition{
+  margin:0 !important;
+  position:absolute; top:0; left:0; right:0;
+  height:59px; background:#000; color:#fff;
+  z-index:9999; display:none; width:100%; box-sizing:border-box;
+}
+#edition .bandeau_edition{
+  max-width:1140px; margin:0 auto; height:100%;
+  display:flex; align-items:center; justify-content:center; gap:10px; font-size:16px; line-height:100;
+}
+#edition .bandeau_edition i{ color:#fff; }
+body.banner-on{ padding-top:59px !important; } /* pousse le contenu sous le bandeau */
+
+/* =============== lien "modifier" + état mode édition =============== */
+#modif_projet{ display:none; }
+body.banner-on #modif_projet{
+  display:inline-flex; align-items:center; gap:8px;
+  font:400 16px "Work Sans", sans-serif; color:#1d1d1d; text-decoration:none;
+}
+body.banner-on .filter{ display:none !important; } /* filtres masqués en édition */
+#modif_projet i{ font-size:16px; color:#1d1d1d; }
+#modif_projet:hover{ opacity:.75; }
+
+/* =============== modales : overlay + panels =============== *//* ===== Modale admin (Figma-like) ===== */
+.amodal{
+  position:fixed; inset:0; z-index:10000;
+  background:rgba(0,0,0,.3);
+  display:none;
+}
+.amodal[aria-hidden="false"]{ display:block; }
+
+.amodal__panel{
+  position:relative; width:630px; max-width:92vw;
+  margin:0 auto; top:50%; transform:translateY(-50%);
+  background:#fff; border-radius:10px; box-shadow:0 24px 80px rgba(0,0,0,.25);
+  padding:26px 30px 24px; display:flex; flex-direction:column; gap:12px;
+}
+
+.amodal__header{
+  display:flex; align-items:center; justify-content:space-between; gap:8px;
+}
+.amodal__back,
+.amodal__close{
+  background:none; border:0; cursor:pointer; font-size:20px; color:#1d1d1d; line-height:1;
+}
+.amodal__back{ visibility:hidden; } /* visible en vue Form */
+.amodal__header h3{
+  margin:0 auto; font:700 26px "Syne", sans-serif; color:#1D6154;
+}
+
+.amodal__view{ display:none; }
+.amodal__view--active{ display:block; }
+.amodal__sep{ border:none; height:1px; background:#E6E6E6; margin:14px 0; }
+.amodal__actions{ display:flex; justify-content:center; }
+
+/* Galerie dans la modale */
+.amodal__grid{
+  display:grid; grid-template-columns:repeat(5, 1fr); gap:10px;
+}
+.amodal__grid figure{ position:relative; margin:0; }
+.amodal__grid img{ width:100%; height:120px; object-fit:cover; display:block; }
+.amodal__trash{
+  position:absolute; top:6px; right:6px;
+  background:#000; color:#fff; border:0; border-radius:4px;
+  padding:4px; cursor:pointer; line-height:1;
+}
+
+/* Upload zone (vue Ajout) */
+.amodal-upload{
+  background:#E8F1F6; border-radius:3px; height:170px;
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px;
+}
+#amodalPreview{ max-width:100%; max-height:160px; display:none; }
+#amodalUploadIcon{ font-size:48px; color:#B9C5CC; }
+.amodal-pick{
+  background:#CBD6DC; color:#306685; border-radius:50px; padding:8px 18px; cursor:pointer; font-weight:600;
+}
+.amodal-hint{ font-size:12px; color:#6C6C6C; }
+
+/* Champs formulaire */
+.amodal-form label{ display:block; margin:10px 0 6px; font-size:14px; }
+.amodal-form input[type="text"], .amodal-form select{
+  width:100%; height:42px; border:none; box-shadow:0 4px 14px rgba(0,0,0,.09);
+  padding:0 12px; font-size:14px; background:#fff;
+}
+
+/* Boutons */
+.abtn{
+  display:inline-flex; align-items:center; justify-content:center;
+  border:0; border-radius:60px; padding:8px 22px; font:700 14px "Syne", sans-serif; cursor:pointer;
+}
+.abtn--primary{ background:#1D6154; color:#fff; }
+#abtn--primary[disabled], .abtn[disabled]{ background:#A7A7A7; cursor:default; }
+
+/* Scroll lock visuel */
+body.amodal-open{ overflow:hidden; }
+
