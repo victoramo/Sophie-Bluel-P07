@@ -8,18 +8,25 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
-	<link rel="stylesheet" href="./assets/style.css">
+	<link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
+	<section id="edition" style="display:none">
+		<div class="bandeau_edition">
+		<i class="fa-regular fa-pen-to-square"></i> Mode édition
+		</div>
+	</section>
+
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
-		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li>login</li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-		</ul>
+		
+			<ul>
+				<li><a href="index.html">Projets</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="./login.html" id="login_logout">Login</a></li>
+				<li><img src="./assets/icons/instagram.png" alt="Instagram" /></li> 
+	       </ul>
 	</nav>
 </header>
 <main>
@@ -34,57 +41,71 @@
 			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
 		</article>
 	</section>
+
+
+
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
-		<div class="gallery">
-			<figure>
-				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
-				<figcaption>Abajour Tahina</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-v.png" alt="Appartement Paris V">
-				<figcaption>Appartement Paris V</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/restaurant-sushisen-londres.png" alt="Restaurant Sushisen - Londres">
-				<figcaption>Restaurant Sushisen - Londres</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/la-balisiere.png" alt="Villa “La Balisiere” - Port Louis">
-				<figcaption>Villa “La Balisiere” - Port Louis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/structures-thermopolis.png" alt="Structures Thermopolis">
-				<figcaption>Structures Thermopolis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-x.png" alt="Appartement Paris X">
-				<figcaption>Appartement Paris X</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/le-coteau-cassis.png" alt="Pavillon “Le coteau” - Cassis">
-				<figcaption>Pavillon “Le coteau” - Cassis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/villa-ferneze.png" alt="Villa Ferneze - Isola d’Elba">
-				<figcaption>Villa Ferneze - Isola d’Elba</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-xviii.png" alt="Appartement Paris XVIII">
-				<figcaption>Appartement Paris XVIII</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/bar-lullaby-paris.png" alt="Bar “Lullaby” - Paris">
-				<figcaption>Bar “Lullaby” - Paris</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
-				<figcaption>Hotel First Arte - New Delhi</figcaption>
-			</figure>
-		</div>
-	</section>
+  <h2>Mes Projets
+    <a id="modif_projet" href="#!" style="display:none">
+      <i class="fa-regular fa-pen-to-square"></i> modifier
+    </a>
+  </h2>
+
+  <div class="filter" id="filters"></div>
+
+<!-- Modale admin (une seule modale = deux vues) -->
+<aside id="adminModal" class="amodal" aria-hidden="true">
+  <div class="amodal__panel" role="dialog" aria-modal="true" aria-labelledby="amodalTitle">
+    <header class="amodal__header">
+      <button type="button" class="amodal__back" aria-label="Retour"></button>
+      <h3 id="amodalTitle">Galerie photo</h3>
+      <button type="button" class="amodal__close" aria-label="Fermer">×</button>
+    </header>
+
+    <div class="amodal__body">
+      <!-- Vue Galerie -->
+      <div class="amodal__view amodal__view--gallery amodal__view--active">
+        <div class="amodal__grid" id="amodalGrid"></div>
+
+        <hr class="amodal__sep">
+        <div class="amodal__actions">
+          <button id="amodalOpenForm" class="abtn abtn--primary">Ajouter une photo</button>
+        </div>
+      </div>
+
+      <!-- Vue Ajout -->
+      <div class="amodal__view amodal__view--form">
+        <form id="amodalForm" class="amodal-form" novalidate>
+          <div class="amodal-upload" id="amodalUpload">
+            <img id="amodalPreview" alt="" />
+            <i class="fa-regular fa-image" id="amodalUploadIcon"></i>
+            <label for="amodalFile" class="amodal-pick">+ Ajouter photo</label>
+            <input id="amodalFile" type="file" accept="image/*" />
+            <div class="amodal-hint">jpg, png • 4&nbsp;Mo max</div>
+          </div>
+
+          <label for="amodalTitleInput">Titre</label>
+          <input id="amodalTitleInput" type="text" required />
+
+          <label for="amodalCategory">Catégorie</label>
+          <select id="amodalCategory" required></select>
+
+          <hr class="amodal__sep">
+          <div class="amodal__actions">
+            <button id="amodalSubmit" class="abtn abtn--primary" type="submit" disabled>Valider</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</aside>
+
+  <!-- Galerie publique (UN SEUL conteneur) -->
+  <div class="gallery"></div>
+</section>
+
 	<section id="contact">
-		<h2>Contact</h2>
+		<h2 id="Contact">Contact</h2>
 		<p>Vous avez un projet ? Discutons-en !</p>
 		<form action="#" method="post">
 			<label for="name">Nom</label>
@@ -105,5 +126,14 @@
 		</ul>
 	</nav>
 </footer>
+
+  <script src="https://kit.fontawesome.com/1e4c81f9ae.js" crossorigin="anonymous"></script>
+<script src="./index.js/gallery.js" defer></script>
+<script src="./index.js/modal.js/modal-gallery.js" defer></script>
+<script src="./index.js/modal.js/add-photo.js" defer></script>
+<script src="./index.js/login.js" defer></script>
+<script src="./index.js/auth.js" defer></script>
+
+
 </body>
 </html>
