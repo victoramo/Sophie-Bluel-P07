@@ -1,0 +1,192 @@
+/* ================================
+   Sophie Bluel — Login (Figma-spec)
+   ================================ */
+
+:root{
+  --bg: #FFFEF8;
+  --text: #3D3D3D;
+  --green: #1D6154;
+  --green-pressed: #0E2F28;
+  --accent: #B1663C;
+  --shadow: 0 4px 14px rgba(0,0,0,0.09);
+}
+
+/* Reset minimal */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Work Sans", Arial, Helvetica, sans-serif;
+  font-size:16px;
+  line-height:1.5;
+  display:flex;
+  flex-direction:column;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+
+/* ================= Header ================= */
+header{
+  width:1140px;
+  max-width:calc(100% - 80px);
+  margin:32px auto 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+header h1{
+  margin:0;
+  font-family:"Syne", system-ui, -apple-system, sans-serif;
+  font-weight:800;
+  font-size:22px;
+  letter-spacing:0.2px;
+  color:var(--accent);
+}
+
+header h1 a{ color:var(--accent); }
+
+header h1 span{
+  display:block;
+  margin-top:4px;
+  font-size:11px;
+  font-weight:400;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--text);
+}
+
+/* Menu top-right */
+header nav ul{
+  margin:0; padding:0;
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:40px;
+}
+header nav li{ display:flex; align-items:center; }
+header nav li img{ width:20px; height:20px; }
+
+/* la maquette affiche le menu en minuscules */
+header nav a{ text-transform:lowercase; }
+header nav a:hover{ color:var(--accent); }
+
+/* ================= Main / Login ================= */
+main{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+#login{
+  width:420px;
+  max-width:92vw;
+  margin:120px 0 140px; /* espace identique à la maquette */
+  text-align:center;
+}
+
+#login h2{
+  margin:0 0 36px;
+  font-family:"Syne", system-ui, -apple-system, sans-serif;
+  font-weight:700;
+  font-size:30px;
+  line-height:1.1;
+  color:var(--green);      /* Titre vert comme sur Figma */
+}
+
+/* Formulaire */
+#loginForm{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:22px;
+}
+
+.field{ width:100%; text-align:left; }
+.field label{
+  display:block;
+  margin:0 0 8px;
+  font-size:14px;
+}
+
+.field input{
+  width:100%;
+  height:48px;
+  border:none;
+  border-radius:0;
+  padding:0 16px;
+  background:#FFFFFF;
+  box-shadow:var(--shadow);     /* ombre douce Figma */
+  font-size:16px;
+}
+.field input:focus{
+  outline:2px solid var(--green);
+  outline-offset:2px;
+}
+
+/* Message d’erreur (caché par défaut) */
+.error{
+  display:none;
+  min-height:18px;
+  margin:-6px 0 0;
+  color:#D65353;
+  font-size:14px;
+  text-align:center;
+}
+
+/* Bouton "Se connecter" */
+#submitBtn{
+  margin-top:6px;
+  height:36px;
+  padding:0 32px;
+  border:none;
+  border-radius:60px;           /* bouton pill */
+  background:var(--green);
+  color:#FFF;
+  cursor:pointer;
+  font-family:"Syne", system-ui, -apple-system, sans-serif;
+  font-weight:700;
+  font-size:14px;
+  line-height:36px;
+  transition:transform .04s ease, background-color .2s ease;
+}
+#submitBtn:hover{ filter:saturate(1.05) brightness(1.03); }
+#submitBtn:active{ transform:translateY(1px); background:var(--green-pressed); }
+
+/* Lien "Mot de passe oublié ?" */
+#login p{ margin:6px 0 0; }
+#forgotLink{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+/* ================= Footer ================= */
+footer nav ul{
+  width:1140px;
+  max-width:calc(100% - 80px);
+  margin:0 auto;
+  padding:28px 0;
+  list-style:none;
+  display:flex;
+  justify-content:flex-end;   /* "Mentions légales" en bas à droite */
+  gap:24px;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 860px){
+  header{
+    margin:24px auto 0;
+    max-width:calc(100% - 48px);
+  }
+  header nav ul{ gap:24px; }
+  #login{ margin:96px 0 120px; }
+}
+@media (max-width: 520px){
+  header{ flex-wrap:wrap; gap:12px; }
+  header nav ul{ gap:18px; }
+  #login h2{ font-size:26px; }
+  .field input{ height:46px; }
+}
