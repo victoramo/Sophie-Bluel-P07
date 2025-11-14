@@ -1,4 +1,4 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
@@ -8,23 +8,16 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
-	<script src="https://kit.fontawesome.com/1e4c81f9ae.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./assets/style.css">
-	<script src="gallery.js" defer></script>
-	<script src="modal-gallery.js" defer></script>
-	<script src="modal-new-photo.js" defer></script>
 </head>
 <body>
-	<section id="edition">
-		<div class="bandeau_edition"><i class="fa-regular fa-pen-to-square"></i>Mode édition
-	</section>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
-			<li><a href="index.html">Projets</a></li>
-			<li><a href="#contact">Contact</a></li>
-			<li><a href="login.html" id="login_logout">login</a></li>
+			<li>projets</li>
+			<li>contact</li>
+			<li>login</li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -41,55 +34,53 @@
 			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
 		</article>
 	</section>
-	
 	<section id="portfolio">
-		
-		<h2>Mes Projets <a href="#modal1"  class="js-modal" id="modif_projet"><i class="fa-regular fa-pen-to-square"></i>modifier</a></h2>
-			<aside id="modal1" style="display:none;">
-				<div class="modal-wrapper" style="display:none;">
-					<div class="top1">
-						<div><button class="js-modal-close-1"><i class="fa-solid fa-x"></i></button></div>
-					</div>
-					<div class="title"><h3>Galerie photo</h3></div>
-					<div class="modal-gallery">
-				</div>
-
-				<div id="separation1"></div>
-
-				<a href="#modal2" class="js-modal" id="ajout_projet">Ajouter une photo </a>
-			</aside>
-			<aside id="modal2" style="display:none;">
-				<div class="modal-wrapper-new" style="display:none;">
-					<div class="top">
-						<div><button class="modal-back"><i class="fa-solid fa-arrow-left"></i></button></div>
-						<div><button class="js-modal-close-new"><i class="fa-solid fa-x"></i></button></div>
-					</div>
-					<div class="title"><h3>Ajout photo</h3></div>
-					<div class="form">
-						<div class="modal-new-photo"> 
-							<div class="picture-selection">
-								<i id="no-picture-preview" class="fa-regular fa-image"></i>
-								<input accept="image/*" type='file' id="input-picture" style="display:none" />
-								<button class="button-add-photo">+ Ajouter photo</button>
-								<div class="precision">jpg, png : 4mo max</div>
-							</div>
-							<img id="picture-preview" name="picture-preview" src="#" alt="your image" />
-						</div>
-						<div class="modal-new-photo-form">
-							<label for="titre">Titre</label>
-							<input name="titre" class="input-titre" type="text"/>
-							<label for="categorie">Catégorie</label>
-							<select name="categorie" class="select-category" type="text"></select>
-							<div id="separation2"></div>
-							<button class="button-submit">Valider</button>
-						</div>
-					</div>
-				</div>
-				
-			</aside>
-		<div class="filter">
-		</div>
+		<h2>Mes Projets</h2>
 		<div class="gallery">
+			<figure>
+				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
+				<figcaption>Abajour Tahina</figcaption>
+			</figure>
+			<figure>
+				<img src="assets/images/appartement-paris-v.png" alt="Appartement Paris V">
+				<figcaption>Appartement Paris V</figcaption>
+			</figure>
+			<figure>
+				<img src="assets/images/restaurant-sushisen-londres.png" alt="Restaurant Sushisen - Londres">
+				<figcaption>Restaurant Sushisen - Londres</figcaption>
+			</figure>
+			<figure>
+				<img src="assets/images/la-balisiere.png" alt="Villa “La Balisiere” - Port Louis">
+				<figcaption>Villa “La Balisiere” - Port Louis</figcaption>
+			</figure>
+			<figure>
+				<img src="assets/images/structures-thermopolis.png" alt="Structures Thermopolis">
+				<figcaption>Structures Thermopolis</figcaption>
+			</figure>
+			<figure>
+				<img src="assets/images/appartement-paris-x.png" alt="Appartement Paris X">
+				<figcaption>Appartement Paris X</figcaption>
+			</figure>
+			<figure>
+				<img src="assets/images/le-coteau-cassis.png" alt="Pavillon “Le coteau” - Cassis">
+				<figcaption>Pavillon “Le coteau” - Cassis</figcaption>
+			</figure>
+			<figure>
+				<img src="assets/images/villa-ferneze.png" alt="Villa Ferneze - Isola d’Elba">
+				<figcaption>Villa Ferneze - Isola d’Elba</figcaption>
+			</figure>
+			<figure>
+				<img src="assets/images/appartement-paris-xviii.png" alt="Appartement Paris XVIII">
+				<figcaption>Appartement Paris XVIII</figcaption>
+			</figure>
+			<figure>
+				<img src="assets/images/bar-lullaby-paris.png" alt="Bar “Lullaby” - Paris">
+				<figcaption>Bar “Lullaby” - Paris</figcaption>
+			</figure>
+			<figure>
+				<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
+				<figcaption>Hotel First Arte - New Delhi</figcaption>
+			</figure>
 		</div>
 	</section>
 	<section id="contact">
